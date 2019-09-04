@@ -3,7 +3,7 @@
   "version": "8.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o",
+    "start": "concurrently --kill-others \"ng serve -o\" \"json-server --watch db\\db.json\"",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -22,10 +22,15 @@
     "rxjs": "^6.5.2",
     "bootstrap": "^3.4.1",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "@ngrx/data": "^8.0.1",
+    "@ngrx/effects": "^8.0.1",
+    "@ngrx/entity": "^8.0.1",
+    "@ngrx/router-store": "^8.0.1",
+    "@ngrx/store": "^8.0.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.800.0",
+    "@angular-devkit/build-angular": "^0.800.6",
     "@angular/cli": "^8.0.2",
     "@angular/compiler-cli": "^8.0.0",
     "@angular/language-service": "^8.0.0",
@@ -33,6 +38,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "concurrently": "^4.1.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -43,6 +49,8 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "@ngrx/schematics": "^8.0.1",
+    "@ngrx/store-devtools": "^8.0.1"
   }
 }
